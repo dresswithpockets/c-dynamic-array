@@ -112,18 +112,9 @@
 // this definition of max_align_t is only really necessary when using MSVC, since max_align_t isnt
 // included in stddef.h on some versions of the Windows SDK for some ungodly reason, even in newer C
 // standards
-
-/* Type whose alignment is supported in every context and is at least
-   as great as that of any standard type not using alignment
-   specifiers.  */
 typedef struct {
     _Alignas(_Alignof(long long)) long long max_align_ll;
     _Alignas(_Alignof(long double)) long double max_align_ld;
-    /* _Float128 is defined as a basic type, so max_align_t must be
-       sufficiently aligned for it.  This code must work in C++, so we
-       use __float128 here; that is only available on some
-       architectures, but only on i386 is extra alignment needed for
-       __float128.  */
 #ifdef _M_X86
     _Alignas(_Alignof(__float128)) max_align_f128;
 #endif
