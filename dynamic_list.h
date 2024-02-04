@@ -115,7 +115,7 @@
 typedef struct {
     _Alignas(_Alignof(long long)) long long max_align_ll;
     _Alignas(_Alignof(long double)) long double max_align_ld;
-#ifdef _M_X86
+#if defined(i386) || defined(__i386__) || defined(__i386) || defined(_M_IX86)
     _Alignas(_Alignof(__float128)) max_align_f128;
 #endif
 } max_align_t;
