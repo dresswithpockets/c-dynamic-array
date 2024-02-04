@@ -12,12 +12,9 @@ Do this before you include this file in *one* C file to create the implementatio
 #define DEFAULT_LIST_CAPACITY 16
 ```
 
-If you're compiling in MSVC, Visual Studio, or Rider, you may need to define this project-wide:
-```c
-DYNAMIC_LIST_DEF_MAXALIGN
-```
-This will create a definition of `max_align_t`, which is missing in recent versions of the
-Windows SDK.
+If you're compiling in MSVC, Visual Studio, or Rider, you may need to define
+`DYNAMIC_LIST_DEF_MAXALIGN` project-wide. This will create a definition of `max_align_t`, which is
+missing in recent versions of the Windows SDK.
 
 ## Basic Usage
 
