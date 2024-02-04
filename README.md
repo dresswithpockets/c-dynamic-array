@@ -56,7 +56,7 @@ for (size_t i = 0; i < list_len(list); i++)
     printf("%d\n", list[i]);
 ```
 
-### Free a list
+### Free a List
 
 ```c
 list_free(list);
